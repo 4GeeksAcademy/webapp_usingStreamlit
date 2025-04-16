@@ -5,10 +5,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
 
 # Cargar modelo
-modelo = joblib.load('/workspaces/webapp_usingStreamlit/models/knn_neighbors-6_algorithm-brute_metric-cosine.sav')
+modelo = joblib.load("/workspaces/webapp_usingStreamlit/models/knn_neighbors-6_algorithm-brute_metric-cosine.sav")
 
 # Cargar vectorizador
-vectorizer = joblib.load('/workspaces/webapp_usingStreamlit/models/tfidf_vectorizer.sav')
+vectorizer = joblib.load("/workspaces/webapp_usingStreamlit/models/tfidf_vectorizer.sav")
 
 # Cargar tus datos
 df_done = pd.read_pickle('df_done.pkl')
