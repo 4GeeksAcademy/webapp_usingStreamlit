@@ -3,12 +3,14 @@ import pandas as pd
 import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
+import os
 
-# Cargar modelo
-modelo = joblib.load("/workspaces/webapp_usingStreamlit/models/knn_neighbors-6_algorithm-brute_metric-cosine.sav")
+# Usando rutas relativas
+model_path = os.path.join(os.getcwd(), 'models', 'knn_neighbors-6_algorithm-brute_metric-cosine.sav')
+modelo = joblib.load(model_path)
 
-# Cargar vectorizador
-vectorizer = joblib.load("/workspaces/webapp_usingStreamlit/models/tfidf_vectorizer.sav")
+vectorizer_path = os.path.join(os.getcwd(), 'models', 'tfidf_vectorizer.sav')
+vectorizer = joblib.load(vectorizer_path)
 
 # Cargar tus datos
 df_done = pd.read_pickle('df_done.pkl')
