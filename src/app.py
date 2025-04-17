@@ -6,10 +6,10 @@ from sklearn.neighbors import NearestNeighbors
 import os
 
 # Usando rutas relativas
-model_path = os.path.join(os.getcwd(), 'models', 'knn_neighbors-6_algorithm-brute_metric-cosine.sav')
+model_path = os.path.join(os.getcwd(), 'src', 'knn_neighbors-6_algorithm-brute_metric-cosine.sav')
 modelo = joblib.load(model_path)
 
-vectorizer_path = os.path.join(os.getcwd(), 'models', 'tfidf_vectorizer.sav')
+vectorizer_path = os.path.join(os.getcwd(), 'src', 'tfidf_vectorizer.sav')
 vectorizer = joblib.load(vectorizer_path)
 
 # Cargar tus datos
