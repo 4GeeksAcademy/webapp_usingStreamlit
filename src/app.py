@@ -5,15 +5,19 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
 import os
 
-# Usando rutas relativas
-model_path = os.path.join(os.getcwd(), 'src', 'knn_neighbors-6_algorithm-brute_metric-cosine.sav')
+# Obtener la ruta base del archivo actual (donde está app.py)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Usando rutas relativas al archivo
+model_path = os.path.join(BASE_DIR, 'knn_neighbors-6_algorithm-brute_metric-cosine.sav')
 modelo = joblib.load(model_path)
 
-vectorizer_path = os.path.join(os.getcwd(), 'src', 'tfidf_vectorizer.sav')
+vectorizer_path = os.path.join(BASE_DIR, 'tfidf_vectorizer.sav')
 vectorizer = joblib.load(vectorizer_path)
 
 # Cargar tus datos
-df_done = pd.read_pickle('df_done.pkl')
+data_path = os.path.join(BASE_DIR, 'df_done.pkl')
+df_done = pd.read_pickle(data_path)
 
 # Asegurarse de que las columnas estén en el formato adecuado
 if 'tags' not in df_done.columns:
